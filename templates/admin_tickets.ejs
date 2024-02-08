@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table style="width: 100%;">
+        <tr>
+            <th>Token</th>
+            <th>Subject</th>
+            <th>Description</th>
+            <th>Type</th>
+            <th>Status</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Location</th>
+            <th>Action</th>
+        </tr>
+        <% for(let ticket of tickets) {%>
+            <tr>
+                <td><%= ticket['token'] %></td>
+                <td><%= ticket['subject'] %></td>
+                <td style="word-wrap: break-word;width: 30%;"><%= ticket['description'] %></td>
+                <td><%= ticket['type'] %></td>
+                <td><%= ticket['status'] %></td>
+                <td><%= ticket['date'] %></td>
+                <td><%= ticket['time'] %></td>
+                <td><%= ticket['location'] %></td>
+                <td><button><a href="/admin/done/<%= ticket['token'] %>">Done</a></button><button><a href="/admin/close/<%= ticket['token'] %>">Close</a></button><button><a href="/admin/delete/<%= ticket['token'] %>">Delete</a></button></td>
+            </tr>
+        <% } %>
+    </table>
+</body>
+</html>

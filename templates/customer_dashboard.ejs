@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/css/customerDashboard.css">
+</head>
+<body>
+    <h1 style="text-decoration: underline;">My Tickets</h1>
+    <table style="width: 100%;">
+        <tr>
+            <th>Token</th>
+            <th>Subject</th>
+            <th>Description</th>
+            <th>Type</th>
+            <th>Status</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Location</th>
+            <th>Action</th>
+        </tr>
+        <% for(let ticket of tickets) {%>
+            <tr>
+                <td><%= ticket['token'] %></td>
+                <td><%= ticket['subject'] %></td>
+                <td style="word-wrap: break-word; width: 30%;"><%= ticket['description'] %></td>
+                <td><%= ticket['type'] %></td>
+                <td><%= ticket['status'] %></td>
+                <td><%= ticket['date'] %></td>
+                <td><%= ticket['time'] %></td>
+                <td><%= ticket['location'] %></td>
+                <td><button class="btn" id="edit"><a href="/update/<%= ticket['token'] %>">Edit</a></button><button class="btn" id="delete"><a href="/delete/<%= ticket['token'] %>">Delete</a></button></td>
+            </tr>                                                                                                                                                             
+        <% } %>
+    </table>
+    <div>
+        <button class="btn util"><a href="/addTicket">Add Ticket</a></button>
+        <button class="btn util"><a href="/logout">Log Out</a></button>
+    </div>
+</body>
+</html>

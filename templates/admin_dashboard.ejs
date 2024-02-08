@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/css/adminDashboard.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/admin">Home</a></li>
+            <li><a href="/admin/users">Users</a></li>
+            <li><a href="/admin/tickets">Tickets</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div>
+            <img src="./images/users.png">
+            <h2 style="text-align: center;">Users: <%= users %></h2>
+        </div>
+        <div>
+            <img src="./images/tickets.png">
+            <h2 style="text-align: center;">tickets: <%= tickets %></h2>
+        </div>
+    </div>
+</body>
+</html>

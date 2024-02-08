@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="./css/updateTickets.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <form action="/update/<%= token %>" method="post">
+            <input type="text" name="subject" placeholder="Subject" class="inp">
+            <textarea name="description" cols="30" rows="10" style="resize: none;" placeholder="Description" class="textarea"></textarea>
+            <div>
+                <input type="radio" name="type" id="complaint" value="complaint" checked>
+                <label label for="complaint">Complaint</label>
+                <input type="radio" name="type" id="suggestion" value="suggestion">
+                <label for="suggestion">Suggestion</label>
+                <input type="radio" name="type" id="inquery" value="inquery">
+                <label for="inquery">Inquery</label>
+            </div>
+            <input type="text" name="location" placeholder="Location" class="inp">
+            <input type="submit" value="Update Ticket" class="btn">
+        </form>
+    </div>
+</body>
+</html>
